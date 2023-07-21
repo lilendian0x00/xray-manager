@@ -1,0 +1,6 @@
+1. System stats (CPU, RAM, OPEN FDs)
+2. Live system downlink and uplink
+3. Xray service status
+    1. Is Running?
+    2. Last time restarted
+    3. being able to restart
