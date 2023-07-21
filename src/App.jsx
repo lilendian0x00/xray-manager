@@ -1,5 +1,7 @@
 import './App.scss';
+import { useLocation } from 'react';
 import Navbar from './Components/Navbar/Navbar';
+import { AnimatePresence } from 'framer-motion';
 import { Route, Routes } from 'react-router-dom';
 import Home from './Components/Home/Home';
 
@@ -7,9 +9,11 @@ function App() {
   return (
     <div className="">
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
+      <AnimatePresence mode='wait'>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </AnimatePresence>
     </div>
   );
 }

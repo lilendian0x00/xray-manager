@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './Home.scss'
 import axios from '../../api/axios'
 import GaugeChart from 'react-gauge-chart'
+import { motion } from 'framer-motion'
 
 const servers = {
     "stats": {
@@ -27,7 +28,13 @@ function Home() {
     }, [])
 
     return (
-        <div className='dark p-3 flex flex-col'>
+        <motion.div
+            className='dark p-3 flex flex-col'
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+        >
             <div className='flex flex-col text-[var(--creamy)] p-3 min-h-[85vh] w-[100%] border-solid rounded-2xl bg-[var(--creamy)] dark:bg-[var(--wash-black)] shadow-lg shadow-black'>
                 <div className='flex flex-row items-center'>
                     <h1 className='mr-auto text-3xl font-bold text-[var(--wash-black)] dark:text-[var(--creamy)]'>Stats</h1>
@@ -85,7 +92,7 @@ function Home() {
             </div>
 
 
-        </div>
+        </motion.div>
     )
 }
 
