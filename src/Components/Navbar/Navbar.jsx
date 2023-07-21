@@ -9,9 +9,10 @@ function Navbar(props) {
   const [isMenuOpen, setMenu] = useState(false)
   const showMenu = (isMenuOpen) ? " block" : " hidden";
   const nodeRef = useRef(null);
+
   return (
-    <nav>
-      <div className="dark max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <nav className='flex-shrink'>
+      <div className="dark flex flex-wrap items-center justify-between mx-auto p-4">
 
         <a href="/" className="flex items-center">
           <img src={logo} className="h-8 mr-2" alt="Xray Logo" />
@@ -25,10 +26,10 @@ function Navbar(props) {
 
           <CSSTransition nodeRef={nodeRef} in={isMenuOpen} timeout={500} classNames="">
 
-            <div ref={nodeRef} className={"w-full md:block md:w-auto" + showMenu} id="navbar-default">
-              <ul className="font-medium flex flex-row justify-center p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-[var(--wash-black)] md:dark:bg-gray-900 dark:border-gray-700">
-                <li>
-                  <Link to="/home" className="block py-2 pl-3 pr-4 text-white bg-[var(--goblin-green)] rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Home</Link>
+            <div ref={nodeRef} className={"w-full md:block md:w-auto text-center" + showMenu} id="navbar-default">
+              <ul className="font-medium flex flex-row justify-center items-center p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-[var(--wash-black)] md:dark:bg-gray-900 dark:border-gray-700">
+                <li className=''>
+                  <Link to="/home" className="block py-2 pl-3 pr-4 text-white bg-[var(--goblin-green)] rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500">Home</Link>
                 </li>
 
                 <li>

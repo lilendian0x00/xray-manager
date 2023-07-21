@@ -14,18 +14,24 @@
    url("./assets/fonts/Inter.ttf") format("truetype");
   }
 
+body, html, #root {
+  height: 100%;
+}
+
 body {
   margin: 0;
   font-family: 'Inter';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  min-height: 100vh;
+  //height: 100%;
   //display: flex;
   //flex-direction: column;
 	//justify-content: center;
 	//align-items: center;
   background-color: var(--creamy);
 }
+
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

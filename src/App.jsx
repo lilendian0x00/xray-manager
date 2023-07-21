@@ -9,7 +9,7 @@ import About from './Components/About/About';
 
 function App() {
   return (
-    <div className="">
+    <div className="flex flex-col h-full">
       <Navbar />
       <AnimatePresence mode='wait'>
         <Routes>
