@@ -12,6 +12,7 @@
     "flowbite": "^1.7.0",
     "flowbite-react": "^0.4.11",
     "framer-motion": "^10.13.0",
+    "hamburger-react": "^2.5.0",
     "postcss": "^8.4.26",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

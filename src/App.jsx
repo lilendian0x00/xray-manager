@@ -1,8 +1,7 @@
 import './App.scss';
-import { useLocation } from 'react';
 import Navbar from './Components/Navbar/Navbar';
 import { AnimatePresence } from 'framer-motion';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import Home from './Components/Home/Home';
 import Users from './Components/Users/Users';
 import Config from './Components/Config/Config';
@@ -14,6 +13,7 @@ function App() {
       <Navbar />
       <AnimatePresence mode='wait'>
         <Routes>
+          <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/home" element={<Home />} />
           <Route path="/users" element={<Users />} />
           <Route path="/config" element={<Config />} />
