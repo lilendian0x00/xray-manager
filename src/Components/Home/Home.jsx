@@ -11,8 +11,18 @@ const servers = {
     }
 }
 
+const pages = {
+    "stats": {
+
+    }, 
+    "xray": {
+
+    }
+}
+
 function Home() {
     const [isloaded, setLoad] = useState(false)
+    const [page, setPage] = useState("stats")
     const [data, setData] = useState(servers)
 
     useEffect(() => {
@@ -38,16 +48,17 @@ function Home() {
         >
             <div className='flex flex-col text-[var(--creamy)] h-[95%] p-3 w-[90%] border-solid rounded-xl bg-[var(--creamy)] dark:bg-[var(--wash-black)] shadow-lg shadow-black'>
 
-                
+
                 <div className='flex flex-row items-center text-center'>
                     <h1 className='mr-auto text-3xl font-bold text-[var(--wash-black)] dark:text-[var(--creamy)]'>Stats</h1>
-                    <div className='flex flex-row gap-1 border-solid rounded-xl bg-[var(--creamy)] border-[var(--creamy)]'>
-                        <Link className='flex flex-col justify-center border-solid border-[var(--wash-black)] border-2 bg-[var(--wash-black)] text-[var(--creamy)] dark:bg-[var(--creamy)] dark:text-[var(--wash-black)] rounded-xl text-sm font-bold w-20 h-7' >
+                    <div className='flex flex-row outline-none border-solid border-2 border-[var(--creamy)] rounded-xl bg-transparent'>
+
+                        <Link onClick={()=>setPage("stats")} className={`flex flex-col outline-none justify-center border-solid border-[var(--wash-black)] border-2 bg-[var(--wash-black)] text-[var(--creamy)] rounded-xl text-sm font-bold w-20 h-7 ${(page==="stats") ? "bg-[#D9D9D9] text-[#0D0D0D]" : "text-[#D9D9D9]"}`} >
                             <span>stats</span>
                         </Link>
 
 
-                        <Link className='flex flex-col justify-center border-solid border-[var(--wash-black)] bg-[var(--wash-black)] text-[var(--creamy)] dark:bg-[var(--creamy)] dark:text-[var(--wash-black)] rounded-xl text-sm font-bold w-20 h-7' >
+                        <Link onClick={()=>setPage("xray")} className={`flex flex-col outline-none justify-center border-solid border-[var(--wash-black)] border-2 bg-[var(--wash-black)] text-[var(--creamy)] rounded-xl text-sm font-bold w-20 h-7 ${(page==="xray") ? "bg-[#D9D9D9] text-[#0D0D0D]" : "text-[#D9D9D9]"}`} >
                             <span>xray</span>
                         </Link>
 
