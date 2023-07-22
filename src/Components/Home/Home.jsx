@@ -3,6 +3,7 @@ import './Home.scss'
 import axios from '../../api/axios'
 import GaugeChart from 'react-gauge-chart'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 
 const servers = {
     "stats": {
@@ -29,16 +30,31 @@ function Home() {
 
     return (
         <motion.div
-            className='dark p-3 flex flex-col flex-shrink h-full'
+            className='dark flex flex-col flex-shrink justify-center items-center h-full'
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
         >
-            <div className='flex flex-col text-[var(--creamy)] h-[95%] p-3 w-[100%] border-solid rounded-2xl bg-[var(--creamy)] dark:bg-[var(--wash-black)] shadow-lg shadow-black'>
-                <div className='flex flex-row items-center'>
+            <div className='flex flex-col text-[var(--creamy)] h-[95%] p-3 w-[90%] border-solid rounded-xl bg-[var(--creamy)] dark:bg-[var(--wash-black)] shadow-lg shadow-black'>
+
+                
+                <div className='flex flex-row items-center text-center'>
                     <h1 className='mr-auto text-3xl font-bold text-[var(--wash-black)] dark:text-[var(--creamy)]'>Stats</h1>
-                    <button className='ml-auto border-solid border-[var(--creamy)] bg-[var(--wash-black)] text-[var(--creamy)] dark:bg-[var(--creamy)] dark:text-[var(--wash-black)] rounded-2xl text-sm font-bold text-center w-20 h-7'>restart</button>
+                    <div className='flex flex-row gap-1 border-solid rounded-xl bg-[var(--creamy)] border-[var(--creamy)]'>
+                        <Link className='flex flex-col justify-center border-solid border-[var(--wash-black)] border-2 bg-[var(--wash-black)] text-[var(--creamy)] dark:bg-[var(--creamy)] dark:text-[var(--wash-black)] rounded-xl text-sm font-bold w-20 h-7' >
+                            <span>stats</span>
+                        </Link>
+
+
+                        <Link className='flex flex-col justify-center border-solid border-[var(--wash-black)] bg-[var(--wash-black)] text-[var(--creamy)] dark:bg-[var(--creamy)] dark:text-[var(--wash-black)] rounded-xl text-sm font-bold w-20 h-7' >
+                            <span>xray</span>
+                        </Link>
+
+
+                    </div>
+
+
                 </div>
 
 

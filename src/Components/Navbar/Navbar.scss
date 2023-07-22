@@ -1,17 +1,14 @@
 .my-node-enter {
-    top: 0;
-    width: 120px;
-    max-height: 40px;
-    color: transparent;
+    max-height: 1px;
 }
 .my-node-enter-active {
-    top: 45px;
-    width: 200px;
-    max-height: 200px;
-    transition: all 400ms;
+    max-height: 100px;
+    transition: all 600ms;
 }
 .my-node-exit {
+    max-height: 100px;
 }
 .my-node-exit-active {
-
+    max-height: 0px;
+    transition: all 600ms;
 }
