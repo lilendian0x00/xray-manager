@@ -13,7 +13,7 @@ function App() {
       <Navbar />
       <AnimatePresence mode='wait'>
         <Routes>
-          <Route path="/" element={<Navigate to="/home" />} />
+          <Route path="/" element={<Navigate to="/home/stats" />} />
           <Route path="/home/*" element={<Home />} />
           <Route path="/users" element={<Users />} />
           <Route path="/config" element={<Config />} />
