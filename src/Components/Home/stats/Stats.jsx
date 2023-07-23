@@ -54,6 +54,11 @@ function Stats() {
                     <div className='animate-pulse h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-24 mt-2'></div>
                 </div>
             </div>
+
+            <div className='flex flex-col items-center mt-8'>
+                <span className='text-2xl font-bold text-[var(--wash-black)] dark:text-[var(--creamy)]'>Open FDs</span>
+                <div className='animate-pulse h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-24 mt-2'></div>
+            </div>
         </motion.div>
 
     )
