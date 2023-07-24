@@ -1,7 +1,9 @@
 # xray-manager
+
 A pretty simple but futuristic management panel written in ReactJS & Golang for xray-core
 
 # 🚧 Under construction 🚧
+
 For now I'm working on the front-end. To preview it you may run the following commands: (You'll need nodejs version 18 or later)
 
 1. `git clone https://github.com/lilendian0x00/xray-manager.git`
@@ -15,5 +17,8 @@ For now I'm working on the front-end. To preview it you may run the following co
 5. `npm start` # to start the webserver
 
 # Full size screenshot (iPhone 12 Pro)
-<img src="./images/panel-i12pro.png" width="200">
-<img src="./images/panel-navbar.png" width="200">
+
+<div style="display: flex; dlex-direction:row; gap: 5px;">
+    <img src="./images/panel-i12pro.png" width="200">
+    <img src="./images/panel-navbar.png" width="200">
+</div>
