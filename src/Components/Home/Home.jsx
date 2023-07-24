@@ -41,7 +41,7 @@ function Home() {
 
     return (
         <motion.div
-            className='dark flex flex-col flex-shrink justify-center items-center h-full'
+            className='dark flex flex-col flex-shrink justify-center items-center h-full md:w-full'
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -54,11 +54,11 @@ function Home() {
                     <h1 className='mr-auto text-3xl font-bold text-[var(--wash-black)] dark:text-[var(--creamy)]'>{page.charAt(0).toUpperCase() + page.slice(1)}</h1>
                     <div className='flex flex-row outline-none border-solid border-2 border-[var(--creamy)] rounded-xl bg-transparent'>
 
-                        <Link to={"/home/stats"} onClick={() => setPage("stats")} className={`flex flex-col outline-none justify-center border-solid border-[var(--wash-black)] border-2 rounded-xl text-sm font-bold w-20 h-7 ${(page === "stats") ? "bg-[#D9D9D9] text-[#0D0D0D]" : "text-[#D9D9D9]"}`} >
+                        <Link to={"/home/stats"} onClick={() => setPage("stats")} className={`flex flex-col outline-none justify-center border-solid border-[var(--wash-black)] border-2 rounded-xl text-sm font-bold w-20 h-7 transition duration-150 ease-in-out hover:ease-in ${(page === "stats") ? "bg-[#D9D9D9] text-[#0D0D0D]" : "text-[#D9D9D9]"}`} >
                             <span>stats</span>
                         </Link>
 
-                        <Link to={"/home/xray"} onClick={() => setPage("xray")} className={`flex flex-col outline-none justify-center border-solid border-[var(--wash-black)] border-2 rounded-xl text-sm font-bold w-20 h-7 ${(page === "xray") ? "bg-[#D9D9D9] text-[#0D0D0D]" : "text-[#D9D9D9]"}`} >
+                        <Link to={"/home/xray"} onClick={() => setPage("xray")} className={`flex flex-col outline-none justify-center border-solid border-[var(--wash-black)] border-2 rounded-xl text-sm font-bold w-20 h-7 transition duration-150 ease-in-out hover:ease-in ${(page === "xray") ? "bg-[#D9D9D9] text-[#0D0D0D]" : "text-[#D9D9D9]"}`} >
                             <span>xray</span>
                         </Link>
 

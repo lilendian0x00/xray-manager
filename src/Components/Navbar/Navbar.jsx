@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './Navbar.scss'
 import logo from '../../assets/images/xray.png';
 import { CSSTransition } from "react-transition-group";
@@ -11,20 +11,40 @@ function Navbar(props) {
 
   //const showMenu = (isMenuOpen) ? " block" : " hidden";
   const nodeRef = useRef(null);
-
+  const location = useLocation().pathname;
   return (
-    <nav className='flex-shrink'>
-      <div className="dark flex flex-wrap items-center justify-center mx-auto p-2">
+    <nav className=''>
+      <div className="dark flex md:flex-col flex-wrap md:flex-nowrap items-center justify-center p-4 h-full">
 
         <a href="/" className="flex items-center">
           <img src={logo} className="h-8" alt="Xray Logo" />
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-[var(--wash-black)]">Xray</span>
         </a>
 
-        <button type="button" onClick={() => { setMenuButton(!isMenuOpen) }} className="inline-flex items-center p-2 w-16 h-10 justify-center text-sm text-[var(--goblin-green)] rounded-xl md:hidden focus:outline-none dark:text-[var(--wash-black)]">
+        <button type="button" onClick={() => { setMenuButton(!isMenuOpen) }} className="inline-flex items-center md:hidden p-2 w-16 h-10 justify-center text-sm text-[var(--goblin-green)] rounded-xl focus:outline-none dark:text-[var(--wash-black)]">
           <Hamburger direction='left' distance='sm' size={32} duration={0.35} />
         </button>
 
+        <div className={"hidden w-full h-full self-center md:block text-center flex-shrink outline-none"}>
+          <ul className="font-medium h-full flex flex-col outline-none flex-shrink justify-around items-center p-7 mt-2 border-0 rounded-xl bg-gray-50 dark:bg-[var(--wash-black)] shadow-lg shadow-black">
+            <li>
+              <Link to="/home/stats" className={`block transition duration-150 ease-in-out hover:ease-in py-2 pl-3 pr-4 text-white rounded ${(location.includes("/home/")) ? `bg-[var(--goblin-green)]` : `hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white`}`}>Home</Link>
+            </li>
+
+            <li>
+              <Link to="/users" className={`block transition duration-150 ease-in-out hover:ease-in py-2 pl-3 pr-4 text-white rounded ${(location === "/users") ? `bg-[var(--goblin-green)]` : `hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white`}`}>Users</Link>
+            </li>
+
+            <li>
+              <Link to="/config" className={`block transition duration-150 ease-in-out hover:ease-in py-2 pl-3 pr-4 text-white rounded ${(location === "/config") ? `bg-[var(--goblin-green)]` : `hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white`}`}>Config</Link>
+            </li>
+
+            <li>
+              <Link to="/about" className={`block transition duration-150 ease-in-out hover:ease-in py-2 pl-3 pr-4 text-white rounded ${(location === "/about") ? `bg-[var(--goblin-green)]` : `hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white`}`}>About</Link>
+            </li>
+
+          </ul>
+        </div>
 
         <CSSTransition
           nodeRef={nodeRef}
@@ -35,28 +55,28 @@ function Navbar(props) {
           onEnter={() => setMenu(true)}
           onExited={() => setMenu(false)}
         >
-          <div ref={nodeRef} className={"w-full md:block md:w-auto text-center"} id="navbar-default">
+          <div ref={nodeRef} className={"w-full md:w-auto md:h-full text-center"} id="navbar-default">
             {isMenuCSSOpen &&
-              <ul className="font-medium flex flex-row justify-center items-center p-3 md:p-0 mt-2 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-[var(--wash-black)] md:dark:bg-gray-900 dark:border-gray-700">
-                <li className=''>
-                  <Link to="/home" className="block py-2 pl-3 pr-4 text-white bg-[var(--goblin-green)] rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500">Home</Link>
+              <ul className="font-medium flex flex-row md:flex-col justify-center items-center p-3 mt-2 border border-gray-100 rounded-lg bg-gray-50 dark:bg-[var(--wash-black)] dark:border-gray-700 shadow-md shadow-black">
+                <li>
+                  <Link to="/home/stats" className={`block transition duration-150 ease-in-out hover:ease-in py-2 pl-3 pr-4 text-white rounded ${(location.includes("/home/")) ? `bg-[var(--goblin-green)]` : `hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white`}`}>Home</Link>
                 </li>
 
                 <li>
-                  <Link to="/users" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Users</Link>
+                  <Link to="/users" className={`block transition duration-150 ease-in-out hover:ease-in py-2 pl-3 pr-4 text-white rounded ${(location === "/users") ? `bg-[var(--goblin-green)]` : `hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white`}`}>Users</Link>
                 </li>
 
                 <li>
-                  <Link to="/config" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Config</Link>
+                  <Link to="/config" className={`block transition duration-150 ease-in-out hover:ease-in py-2 pl-3 pr-4 text-white rounded ${(location === "/config") ? `bg-[var(--goblin-green)]` : `hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white`}`}>Config</Link>
                 </li>
 
                 <li>
-                  <Link to="/about" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</Link>
+                  <Link to="/about" className={`block transition duration-150 ease-in-out hover:ease-in py-2 pl-3 pr-4 text-white rounded ${(location === "/about") ? `bg-[var(--goblin-green)]` : `hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white`}`}>About</Link>
                 </li>
 
               </ul>
-
             }
+
           </div>
 
 

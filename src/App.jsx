@@ -9,7 +9,7 @@ import About from './Components/About/About';
 
 function App() {
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-col h-full w-full md:flex-row">
       <Navbar />
       <AnimatePresence mode='wait'>
         <Routes>
