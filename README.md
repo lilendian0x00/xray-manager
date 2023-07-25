@@ -21,5 +21,5 @@ For now I'm working on the front-end. To preview it you may run the following co
 <div style="display: flex; flex-direction:column; gap:5px;">
     <img src="./images/panel-i12pro.png" width="200">
     <img src="./images/panel-navbar.png" width="200">
-    <img src="./images/desktop.png" width="200">
+    <img src="./images/desktop.png">
 </div>
