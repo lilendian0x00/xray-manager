@@ -18,7 +18,8 @@ For now I'm working on the front-end. To preview it you may run the following co
 
 # Full size screenshot (iPhone 12 Pro)
 
-<div style="display: flex; dlex-direction:row; justify-content: space-between;">
+<div style="display: flex; flex-direction:column; gap:5px;">
     <img src="./images/panel-i12pro.png" width="200">
     <img src="./images/panel-navbar.png" width="200">
+    <img src="./images/desktop.png" width="200">
 </div>
