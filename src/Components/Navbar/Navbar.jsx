@@ -4,6 +4,8 @@ import './Navbar.scss'
 import logo from '../../assets/images/xray.png';
 import { CSSTransition } from "react-transition-group";
 import { Spin as Hamburger } from 'hamburger-react'
+import { FaHome, FaUsers, } from 'react-icons/fa';
+import { AiFillSetting } from 'react-icons/ai';
 
 function Navbar(props) {
   const [isMenuOpen, setMenuButton] = useState(false)
@@ -26,21 +28,33 @@ function Navbar(props) {
         </button>
 
         <div className={"hidden w-full h-full self-center md:block text-center flex-shrink outline-none"}>
-          <ul className="font-medium h-full flex flex-col outline-none flex-shrink justify-around items-center p-7 mt-2 border-0 rounded-xl bg-gray-50 dark:bg-[var(--wash-black)] shadow-lg shadow-black">
+          <ul className="font-medium text-base h-full flex flex-col outline-none flex-shrink justify-around items-center p-7 mt-2 border-0 rounded-xl bg-gray-50 dark:bg-[var(--wash-black)] shadow-lg shadow-black">
             <li>
-              <Link to="/home/stats" className={`block transition duration-150 ease-in-out hover:ease-in py-2 pl-3 pr-4 text-white rounded ${(location.includes("/home/")) ? `bg-[var(--goblin-green)]` : `hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white`}`}>Home</Link>
+              <Link to="/home/stats" className={`flex flex-col justify-center items-center rounded-lg transition duration-150 ease-in-out hover:ease-in py-2 pl-3 pr-4 ${(location.includes("home")) ? `bg-[var(--goblin-green)] text-black pr-16` : `hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white`} `}>
+                <FaHome size={26} color={location.includes("/home/") ? "black" : "white"} />
+                <span>Home</span>
+              </Link>
             </li>
 
             <li>
-              <Link to="/users" className={`block transition duration-150 ease-in-out hover:ease-in py-2 pl-3 pr-4 text-white rounded ${(location === "/users") ? `bg-[var(--goblin-green)]` : `hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white`}`}>Users</Link>
+              <Link to="/users" className={`flex flex-col justify-center items-center rounded-lg transition duration-150 ease-in-out hover:ease-in py-2 pl-3 pr-4 ${(location === "/users") ? `bg-[var(--goblin-green)] text-black pr-16` : `hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white`} `}>
+                <FaUsers size={26} color={(location === "/users") ? "black" : "white"} />
+                <span>Users</span>
+              </Link>
             </li>
 
             <li>
-              <Link to="/config" className={`block transition duration-150 ease-in-out hover:ease-in py-2 pl-3 pr-4 text-white rounded ${(location === "/config") ? `bg-[var(--goblin-green)]` : `hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white`}`}>Config</Link>
+              <Link to="/config" className={`flex flex-col justify-center items-center rounded-lg transition duration-150 ease-in-out hover:ease-in py-2 pl-3 pr-4 ${(location === "/config") ? `bg-[var(--goblin-green)] text-black pr-16` : `hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white`} `}>
+                <AiFillSetting size={26} color={(location === "/config") ? "black" : "white"} />
+                <span>About</span>
+              </Link>
             </li>
 
             <li>
-              <Link to="/about" className={`block transition duration-150 ease-in-out hover:ease-in py-2 pl-3 pr-4 text-white rounded ${(location === "/about") ? `bg-[var(--goblin-green)]` : `hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white`}`}>About</Link>
+              <Link to="/about" className={`flex flex-col justify-center items-center rounded-lg transition duration-150 ease-in-out hover:ease-in py-2 pl-3 pr-4 ${(location === "/about") ? `bg-[var(--goblin-green)] text-black pr-16` : `hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white`}`}>
+                <FaHome size={26} color={(location === "/about") ? "black" : "white"} />
+                <span>About</span>
+              </Link>
             </li>
 
           </ul>
