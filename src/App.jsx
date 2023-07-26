@@ -1,11 +1,11 @@
 import './App.scss';
-import Navbar from './Views/Navbar/Navbar';
+import Navbar from './views/Navbar/Navbar';
 import { AnimatePresence } from 'framer-motion';
 import { Route, Routes, Navigate } from 'react-router-dom';
-import Home from './Views/Home/Home';
-import Users from './Views/Users/Users';
-import Config from './Views/Config/Config';
-import About from './Views/About/About';
+import Home from './views/Home/Home';
+import Users from './views/Users/Users';
+import Config from './views/Config/Config';
+import About from './views/About/About';
 
 function App() {
   return (
