@@ -71,7 +71,7 @@ function Navbar(props) {
         >
           <div ref={nodeRef} className={"w-full md:w-auto md:h-full text-center"} id="navbar-default">
             {isMenuCSSOpen &&
-              <ul className="font-medium flex flex-row md:flex-col justify-center items-center p-3 mt-2 border border-gray-100 rounded-lg bg-gray-50 dark:bg-[var(--wash-black)] dark:border-gray-700 shadow-md shadow-black">
+              <ul className="font-medium gap-3 flex flex-row md:flex-col justify-center items-center p-3 mt-2 border border-gray-100 rounded-lg bg-gray-50 dark:bg-[var(--wash-black)] dark:border-gray-700 shadow-md shadow-black">
                 <li>
                   <Link to="/home/stats" className={`block transition duration-150 ease-in-out hover:ease-in py-2 pl-3 pr-4 text-white rounded ${(location.includes("/home/")) ? `bg-[var(--goblin-green)]` : `hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white`}`}>Home</Link>
                 </li>
