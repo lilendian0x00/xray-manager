@@ -37,13 +37,13 @@ function Stats() {
 
     return (
         <motion.div
-            className=''
+            className='p-1 md:p-4'
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
         >
-            <div role='status' className='flex flex-col md:flex-row md:justify-center md:items-center gap-8 text-lg mt-5'>
+            <div role='status' className='flex flex-col md:flex-row md:justify-center md:items-center gap-4 text-lg mt-2'>
                 <GaugeBox id="CPU" name={isDesktopOrLaptop ? "CPU" : "CPU"} value={`${stats.stats.cpu.model} - ${stats.stats.cpu.cores.toString()}c`} percentage={(stats.stats.cpu.usage)} />
 
 
@@ -51,13 +51,13 @@ function Stats() {
 
             </div>
 
-            <div className='flex flex-row p-4 justify-center gap-8 mt-5'>
+            <div className='flex flex-row p-4 justify-center mt-3'>
                 <SimpleBox className="w-1/2" icon={AiOutlineArrowDown} size={24} name={"Download"} value={`${stats.stats.network.downlink} Mb/s`} />
                 
                 <SimpleBox className="w-1/2" icon={AiOutlineArrowUp} size={24} name={"Upload"} value={`${stats.stats.network.uplink}  Mb/s`} />
             </div>
 
-            <div className='flex flex-row p-4 justify-center gap-8 mt-5'>
+            <div className='flex flex-row p-4 justify-center mt-1'>
                 <SimpleBox className="w-1/2" valueClassName="text-sm" icon={BsArrowLeftRight} size={20} name={"FDs"} value={`${stats.stats.network.fds}`} />
 
                 <SimpleBox className="w-1/2" valueClassName="text-sm" icon={BsFillCpuFill} size={20} name={"Load"} value={`${stats.stats.cpu.load_avg}`} />

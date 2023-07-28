@@ -12,7 +12,7 @@ export function GaugeBox(props) {
       </div>
 
       <div className='flex flex-col justify-center self-center items-center'>
-        <div className='w-56'>
+        <div className='w-48'>
           <GaugeChart id="gauge-chart"
             nrOfLevels={20}
             percent={props.percentage}
@@ -32,7 +32,7 @@ export function SimpleBox(props) {
   return (
     <div className={`${props.className} flex flex-col items-center md:border-2 md:border-[var(--creamy)] md:p-5 md:rounded-2xl md:text-center md:max-w-sm`}>
       <props.icon color='#D9D9D9' size={isDesktopOrLaptop ? 40 : size} />
-      <span className='text-2xl font-bold text-[var(--wash-black)] dark:text-[var(--creamy)]'>{name}</span>
+      <span className='text-xl font-bold text-[var(--wash-black)] dark:text-[var(--creamy)]'>{name}</span>
       <div className={`${(value != null) ? ` hidden ` : ``} animate-pulse h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-24 mt-2`}></div>
       <span className={`self-center  md:text-2xl ${props.valueClassName ? props.valueClassName : "text-xl"} ${(value == null) ? ` hidden ` : ``}`}>{value}</span>
     </div>

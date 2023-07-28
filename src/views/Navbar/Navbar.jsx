@@ -16,7 +16,7 @@ function Navbar(props) {
   const location = useLocation().pathname;
   return (
     <nav className=''>
-      <div className="dark flex md:flex-col flex-wrap md:flex-nowrap items-center justify-center p-4 h-full">
+      <div className="dark flex md:flex-col flex-wrap md:flex-nowrap items-center justify-center p-2 h-full">
 
         <a href="/" className="flex items-center">
           <img src={logo} className="h-8" alt="Xray Logo" />
