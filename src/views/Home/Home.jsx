@@ -12,17 +12,7 @@ const servers = {
     }
 }
 
-const pages = {
-    "stats": {
-
-    },
-    "xray": {
-
-    }
-}
-
 function Home() {
-    const [isloaded, setLoad] = useState(false)
     const [page, setPage] = useState("stats")
     const [data, setData] = useState(servers)
 
