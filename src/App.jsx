@@ -2,10 +2,8 @@ import './App.scss';
 import Navbar from './views/Navbar/Navbar';
 import { AnimatePresence } from 'framer-motion';
 import { Route, Routes, Navigate } from 'react-router-dom';
-import Home from './views/Home/Home';
-import Users from './views/Users/Users';
-import Config from './views/Config/Config';
-import About from './views/About/About';
+
+import { routesMap } from './views/Routes';
 
 function App() {
   return (
@@ -14,10 +12,10 @@ function App() {
       <AnimatePresence mode='wait'>
         <Routes>
           <Route path="/" element={<Navigate to="/home/stats" />} />
-          <Route path="/home/*" element={<Home />} />
-          <Route path="/users" element={<Users />} />
-          <Route path="/config" element={<Config />} />
-          <Route path="/about" element={<About />} />
+          <Route path={routesMap[0].location + "/*"} element={routesMap[0].component} />
+          <Route path={routesMap[1].location} element={routesMap[1].component} />
+          <Route path={routesMap[2].location} element={routesMap[2].component} />
+          <Route path={routesMap[3].location} element={routesMap[3].component} />
         </Routes>
       </AnimatePresence>
     </div>
