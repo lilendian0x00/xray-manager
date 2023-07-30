@@ -49,18 +49,21 @@ function Stats() {
 
             </div>
 
-            <div className='flex flex-row p-4 justify-center mt-3 md:gap-4'>
-                <SimpleBox className="w-1/2" icon={AiOutlineArrowDown} size={24} name={"Download"} value={`${stats.network.downlink} Mb/s`} />
+            <div className='flex flex-col mt-6'>
+                <div className='flex flex-row p-4 justify-center gap-4 md:gap-4'>
+                    <SimpleBox className="w-1/2" icon={AiOutlineArrowDown} size={24} name={"Download"} value={`${stats.network.downlink} Mb/s`} />
 
-                <SimpleBox className="w-1/2" icon={AiOutlineArrowUp} size={24} name={"Upload"} value={`${stats.network.uplink}  Mb/s`} />
+                    <SimpleBox className="w-1/2" icon={AiOutlineArrowUp} size={24} name={"Upload"} value={`${stats.network.uplink}  Mb/s`} />
+                </div>
+
+                <div className='flex flex-row p-4 justify-center gap-4 md:gap-4'>
+                    <SimpleBox className="w-1/2" valueClassName="text-lg" icon={BsArrowLeftRight} size={24} name={"Open Files"} value={`${stats.network.fds}`} />
+
+                    <SimpleBox className="w-1/2" valueClassName="text-sm" icon={BsFillCpuFill} size={24} name={"Load Avg"} value={`${stats.cpu.load_avg}`} />
+
+                </div>
             </div>
 
-            <div className='flex flex-row p-4 justify-center mt-1 md:gap-4'>
-                <SimpleBox className="w-1/2" valueClassName="text-sm" icon={BsArrowLeftRight} size={20} name={"FDs"} value={`${stats.network.fds}`} />
-
-                <SimpleBox className="w-1/2" valueClassName="text-sm" icon={BsFillCpuFill} size={20} name={"Load"} value={`${stats.cpu.load_avg}`} />
-
-            </div>
 
         </motion.div>
 

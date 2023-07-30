@@ -12,7 +12,7 @@ export function GaugeBox(props) {
       </div>
 
       <div className='flex flex-col justify-center self-center items-center'>
-        <div className='w-48'>
+        <div className='w-52'>
           <GaugeChart id="gauge-chart"
             nrOfLevels={20}
             percent={props.percentage}
